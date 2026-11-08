@@ -6,5 +6,13 @@
         "made_by": "Denis Villeneuve",
         "text": "Top film",
         "cale_imagine": ""
+    },
+    {
+        "tip": "Serial",
+        "titlu": "The Mentalist",
+        "rating": 5,
+        "made_by": "Netflix",
+        "text": "Minunat serial 10/10.",
+        "cale_imagine": ""
     }
 ]
