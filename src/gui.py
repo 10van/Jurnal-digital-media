@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from models import TIPURI, valideaza, Recenzie
+from storage import salveaza_recenzie
 
 
 def creare_formular(parinte):
@@ -34,15 +35,18 @@ def creare_formular(parinte):
             rating = 0
         review = text_review.get("1.0", tk.END).strip()
 
-        # Apelăm funcția ta din models.py
+        # Apelăm funcția de validare
         erori = valideaza(tip, titlu, rating, review)
 
         if erori:
             messagebox.showerror("Eroare", "\n".join(erori))
         else:
             recenzie_noua = Recenzie(tip, titlu, rating, review)
-            messagebox.showinfo("Succes", f"Validare trecută!\nS-a creat obiectul:\n{recenzie_noua.titlu}")
-            # În pasul următor, aici vom chema funcția lui Mihai de salvare în JSON
+
+            # Salvăm fizic în JSON
+            salveaza_recenzie(recenzie_noua)
+
+            messagebox.showinfo("Succes", f"Recenzia a fost salvată cu succes în JSON!")
 
     tk.Button(frame, text="Salvează Recenzia", command=la_salvare).grid(row=4, column=0, columnspan=2, pady=15)
     return frame

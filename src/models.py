@@ -1,4 +1,4 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 
 TIPURI = ["Film", "Serial", "Carte", "Joc"]
 MAX_CUVINTE = 100
@@ -24,5 +24,3 @@ def valideaza(tip, titlu, rating, text=""):
     if n > MAX_CUVINTE:
         erori.append(f"Review-ul are {n} cuvinte (maxim {MAX_CUVINTE}).")
     return erori
-
-

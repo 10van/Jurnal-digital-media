@@ -12,6 +12,6 @@ def main():
 
     # Menține fereastra deschisă
     root.mainloop()
- # dap
+
 if __name__ == "__main__":
     main()
