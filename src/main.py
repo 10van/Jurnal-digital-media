@@ -6,7 +6,7 @@ def main():
     root.title("Jurnal Digital Media")
     root.geometry("400x350")
 
-    # Aducem formularul pe fereastra principală
+
     formular = creare_formular(root)
     formular.pack(fill="both", expand=True)
 

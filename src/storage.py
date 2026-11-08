@@ -18,7 +18,7 @@ def salveaza_recenzie(recenzie_noua):
     else:
         data = []
 
-    # Adăugăm noua recenzie transformată în dicționar
+
     from dataclasses import asdict
     data.append(asdict(recenzie_noua))
 

@@ -27,3 +27,4 @@ def valideaza(tip, titlu, rating,  made_by, text=""):
     if n > MAX_CUVINTE:
         erori.append(f"Review-ul are {n} cuvinte (maxim {MAX_CUVINTE}).")
     return erori
+#s

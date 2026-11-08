@@ -28,7 +28,7 @@ def creare_formular(parinte):
     spin_rating = tk.Spinbox(frame, from_=1, to=5, width=5)
     spin_rating.grid(row=3, column=1, sticky="w", pady=5)
 
-    # Rând 4 - Review
+
     tk.Label(frame, text="Review (opțional):").grid(row=4, column=0, sticky="nw")
     text_review = tk.Text(frame, width=30, height=5)
     text_review.grid(row=4, column=1, pady=5)
