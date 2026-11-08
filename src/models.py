@@ -13,7 +13,7 @@ class Recenzie:
     cale_imagine: str = ""
 
 def valideaza(tip, titlu, rating,  made_by, text=""):
-    """Întoarce o listă de erori. Lista goală înseamnă că datele sunt valide"""
+    """intoarce o lista de erori. Lista goala inseamna ca datele sunt valide"""
     erori = []
     if tip not in TIPURI:
         erori.append("Selectați tipul media.")

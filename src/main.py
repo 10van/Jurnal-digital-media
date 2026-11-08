@@ -10,7 +10,7 @@ def main():
     formular = creare_formular(root)
     formular.pack(fill="both", expand=True)
 
-    # Menține fereastra deschisă
+    # mentine fereastra deschisa
     root.mainloop()
 
 if __name__ == "__main__":
