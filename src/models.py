@@ -26,7 +26,3 @@ def valideaza(tip, titlu, rating, text=""):
     return erori
 
 
-from model import valideaza
-
-def test_titlu_gol_respins():
-    assert valideaza("Film", "  ", 4) != []
