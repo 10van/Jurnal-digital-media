@@ -1,0 +1,48 @@
+import tkinter as tk
+from tkinter import ttk, messagebox
+from models import TIPURI, valideaza, Recenzie
+
+
+def creare_formular(parinte):
+    frame = tk.Frame(parinte, padx=20, pady=20)
+
+    # Elemente grafice
+    tk.Label(frame, text="Tip Media:").grid(row=0, column=0, sticky="w")
+    combo_tip = ttk.Combobox(frame, values=TIPURI, state="readonly")
+    combo_tip.grid(row=0, column=1, pady=5)
+    combo_tip.set("Selectați tipul")
+
+    tk.Label(frame, text="Titlu:").grid(row=1, column=0, sticky="w")
+    entry_titlu = tk.Entry(frame, width=30)
+    entry_titlu.grid(row=1, column=1, pady=5)
+
+    tk.Label(frame, text="Rating (1-5):").grid(row=2, column=0, sticky="w")
+    spin_rating = tk.Spinbox(frame, from_=1, to=5, width=5)
+    spin_rating.grid(row=2, column=1, sticky="w", pady=5)
+
+    tk.Label(frame, text="Review (opțional):").grid(row=3, column=0, sticky="nw")
+    text_review = tk.Text(frame, width=30, height=5)
+    text_review.grid(row=3, column=1, pady=5)
+
+    # Funcția care se execută când apeși butonul
+    def la_salvare():
+        tip = combo_tip.get()
+        titlu = entry_titlu.get()
+        try:
+            rating = int(spin_rating.get())
+        except ValueError:
+            rating = 0
+        review = text_review.get("1.0", tk.END).strip()
+
+        # Apelăm funcția ta din models.py
+        erori = valideaza(tip, titlu, rating, review)
+
+        if erori:
+            messagebox.showerror("Eroare", "\n".join(erori))
+        else:
+            recenzie_noua = Recenzie(tip, titlu, rating, review)
+            messagebox.showinfo("Succes", f"Validare trecută!\nS-a creat obiectul:\n{recenzie_noua.titlu}")
+            # În pasul următor, aici vom chema funcția lui Mihai de salvare în JSON
+
+    tk.Button(frame, text="Salvează Recenzia", command=la_salvare).grid(row=4, column=0, columnspan=2, pady=15)
+    return frame
