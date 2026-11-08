@@ -7,7 +7,7 @@ from storage import salveaza_recenzie
 def creare_formular(parinte):
     frame = tk.Frame(parinte, padx=20, pady=20)
 
-    # Elemente grafice
+    # Elemente grafic
     tk.Label(frame, text="Tip Media:").grid(row=0, column=0, sticky="w")
     combo_tip = ttk.Combobox(frame, values=TIPURI, state="readonly")
     combo_tip.grid(row=0, column=1, pady=5)
