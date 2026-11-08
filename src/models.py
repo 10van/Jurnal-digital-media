@@ -12,7 +12,7 @@ class Recenzie:
     text: str = ""
     cale_imagine: str = ""
 
-def valideaza(tip, titlu, rating, text="", made_by):
+def valideaza(tip, titlu, rating,  made_by, text=""):
     """Întoarce o listă de erori. Lista goală înseamnă că datele sunt valide"""
     erori = []
     if tip not in TIPURI:
