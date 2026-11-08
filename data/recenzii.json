@@ -1,9 +1,10 @@
 [
     {
-        "tip": "Serial",
-        "titlu": "The Mentalist",
+        "tip": "Film",
+        "titlu": "Dune",
         "rating": 5,
-        "text": "Genial!",
+        "made_by": "Denis Villeneuve",
+        "text": "Top film",
         "cale_imagine": ""
     }
 ]

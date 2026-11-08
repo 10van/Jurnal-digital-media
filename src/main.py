@@ -4,7 +4,7 @@ from gui import creare_formular
 def main():
     root = tk.Tk()
     root.title("Jurnal Digital Media")
-    root.geometry("400x350")
+    root.geometry("1920x1080")
 
 
     formular = creare_formular(root)
